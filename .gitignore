@@ -1,0 +1,46 @@
+# Archivos y carpetas de Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.swp
+*.swo
+
+# Entornos virtuales
+env/
+venv/
+*.env
+.env
+
+# Archivos de configuración del entorno
+*.sqlite3
+db.sqlite3
+
+# Archivos de caché
+*.log
+*.pot
+*.py[cod]
+*.so
+
+# Archivos de configuración específicos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos relacionados con Django
+media/
+staticfiles/
+local_settings.py
+
+# Archivos y carpetas de herramientas
+.idea/
+.vscode/
+*.bak
+*.orig
+
+# Archivos de dependencias instaladas
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Migraciones generadas automáticamente (opcional, solo si no deseas incluirlas)
+*/migrations/*.py
+!*/migrations/__init__.py
