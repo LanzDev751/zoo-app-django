@@ -30,7 +30,7 @@ class Itinerario(models.Model):
     num_especies = models.IntegerField()
 
     def __str__(self):
-        return f"Itinerario {self.id_itinerario}"
+        return f"Itinerario {self.id}"
 
 # Modelo de ItinerarioZona (relación many-to-many entre Itinerario y Zona)
 class ItinerarioZona(models.Model):
@@ -66,7 +66,7 @@ class Especie(models.Model):
     id_zona = models.ForeignKey(Zona, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.nombre_espanol
+        return self.nombre_cientifico
 
 # Modelo de EspecieHabitat (relación many-to-many entre Especie y Habitat)
 class EspecieHabitat(models.Model):
