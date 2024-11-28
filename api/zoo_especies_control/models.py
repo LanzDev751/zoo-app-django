@@ -63,7 +63,7 @@ class Especie(models.Model):
     nombre_cientifico = models.CharField(max_length=100)
     descripcion = models.TextField()
     estado_conservacion = models.CharField(max_length=50)
-    id_zona = models.ForeignKey(Zona, on_delete=models.CASCADE)
+    id_zona = models.ForeignKey(Zona, on_delete=models.CASCADE, null=True)
 
     def __str__(self):
         return self.nombre_cientifico

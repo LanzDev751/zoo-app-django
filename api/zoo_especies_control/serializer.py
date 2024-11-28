@@ -27,10 +27,9 @@ class GuiaSerializer(serializers.ModelSerializer):
 class EspecieSerializer(serializers.ModelSerializer):
     zona_detalles = ZonaSerializer(source='id_zona', read_only=True)
     habitats = serializers.SerializerMethodField()
-
     class Meta:
         model = Especie
-        fields = ['id', 'nombre_espanol', 'nombre_cientifico', 'descripcion', 'estado_conservacion', 'zona_detalles', 'habitats']
+        fields = ['id', 'nombre_espanol', 'nombre_cientifico', 'id_zona' , 'descripcion', 'estado_conservacion', 'zona_detalles', 'habitats']
     def get_habitats(self, obj):
         especie_habitats = EspecieHabitat.objects.filter(id_especie=obj)
         return HabitatSerializer([eh.id_habitat for eh in especie_habitats], many=True).data

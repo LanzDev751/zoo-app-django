@@ -66,6 +66,9 @@ def get_all_especies(request):
 @permission_classes([AllowAny])
 def create_new_especies(request):
     serializer = EspecieSerializer(data=request.data)
+    print('##########################################')
+    print(request.data)
+    print(serializer)
     if serializer.is_valid():
         serializer.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED)
