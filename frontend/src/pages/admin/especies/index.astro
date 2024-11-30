@@ -1,0 +1,24 @@
+---
+import Dashboard from "@layouts/Dashboard.astro";
+import {EspecieForm} from "@components/forms/EspecieForm.jsx";
+import {EspeciesList} from "@components/lists/EspeciesList.jsx";
+
+---
+
+<Dashboard title="Wild Zoo - Panel Admin">
+    <div class="space-y-8">
+        <h1 class="text-3xl font-bold uppercase">Gestión de Especies</h1>
+        
+        <div class="w-full max-w-lg">
+            <h2 class="text-xl font-semibold mb-4">Crear nueva especie</h2>
+            <!-- <UserForm /> -->
+            <EspecieForm client:only="react" />
+        </div>
+
+        <div>
+            <h2 class="text-xl font-semibold mb-4">Lista de Especies</h2>
+            <!-- <UsersList /> -->
+             <EspeciesList client:only="react"/>
+        </div>
+    </div>
+</Dashboard>

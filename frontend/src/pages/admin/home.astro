@@ -1,0 +1,30 @@
+---
+import Dashboard from "../../layouts/Dashboard.astro";
+
+export const prerender = false
+---
+
+<Dashboard title="Wild Zoo - Panel Admin">
+    <div class="space-y-8">
+        <h1 class="text-2xl font-bold">Users Management</h1>
+        
+        <div class="grid grid-cols-2 gap-8">
+            <div>
+            <h2 class="text-xl font-semibold mb-4">Add New User</h2>
+            <!-- <UserForm /> -->
+            </div>
+            
+            <div>
+            <h2 class="text-xl font-semibold mb-4">Edit User</h2>
+            <div id="edit-form">
+                <!-- Edit form will be loaded here -->
+            </div>
+            </div>
+        </div>
+
+        <div>
+            <h2 class="text-xl font-semibold mb-4">Users List</h2>
+            <!-- <UsersList /> -->
+        </div>
+    </div>
+</Dashboard>
