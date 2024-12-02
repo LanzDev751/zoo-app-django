@@ -29,19 +29,19 @@ const {pathname} = Astro.url
             <li class=`px-4 py-2 rounded-md ${pathname.includes('/admin/especies')? 'bg-green-400 text-white hover:text-white': 'text-gray-300 hover:text-white'}`>
                 <a href="/admin/especies" class="block">Especies</a>
             </li>
-            <li class=`px-4 py-2 rounded-md ${pathname === 'admin/habitats'? 'bg-green-400 text-white hover:text-white': 'text-gray-300 hover:text-white'}`>
+            <li class=`px-4 py-2 rounded-md ${pathname.includes('/admin/habitats') ? 'bg-green-400 text-white hover:text-white': 'text-gray-300 hover:text-white'}`>
                 <a href="/admin/habitats" class="block">Habitats</a>
             </li>
-            <li class=`px-4 py-2 rounded-md ${pathname === 'admin/zonas'? 'bg-green-400 text-white hover:text-white': 'text-gray-300 hover:text-white'}`>
-                <a href="/admin/itinerarios" class="block">Zonas</a>
+            <li class=`px-4 py-2 rounded-md ${pathname.includes('/admin/zonas')? 'bg-green-400 text-white hover:text-white': 'text-gray-300 hover:text-white'}`>
+                <a href="/admin/zonas" class="block">Zonas</a>
             </li>
-            <li class=`px-4 py-2 rounded-md ${pathname === 'admin/guias'? 'bg-green-400 text-white hover:text-white': 'text-gray-300 hover:text-white'}`>
+            <li class=`px-4 py-2 rounded-md ${pathname.includes('/admin/guias')? 'bg-green-400 text-white hover:text-white': 'text-gray-300 hover:text-white'}`>
                 <a href="/admin/guias" class="block">Guias</a>
             </li>
-            <li class=`px-4 py-2 rounded-md ${pathname === 'admin/cuidadores'? 'bg-green-400 text-white hover:text-white': 'text-gray-300 hover:text-white'}`>
+            <li class=`px-4 py-2 rounded-md ${pathname.includes('/admin/cuidadores')? 'bg-green-400 text-white hover:text-white': 'text-gray-300 hover:text-white'}`>
                 <a href="/admin/cuidadores" class=" block">Cuidadores</a>
             </li>
-            <li class=`px-4 py-2 rounded-md ${pathname === 'admin/itinerarios'? 'bg-green-400 text-white hover:text-white': 'text-gray-300 hover:text-white'}`>
+            <li class=`px-4 py-2 rounded-md ${pathname.includes('/admin/itinerarios')? 'bg-green-400 text-white hover:text-white': 'text-gray-300 hover:text-white'}`>
                 <a href="/admin/itinerarios" class="block">Itinerarios</a>
             </li>
         </ul>

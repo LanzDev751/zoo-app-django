@@ -1,0 +1,24 @@
+---
+import CuidadoresList from "@/components/lists/CuidadoresList";
+import CuidadorForm from "@/components/forms/CuidadorForm";
+import Dashboard from "@/layouts/Dashboard.astro";
+
+
+---
+
+<Dashboard title="Wild Zoo - Cuidadores">
+    <div class="space-y-8">
+        <h1 class="text-3xl font-bold uppercase">Gestión de Cuidadores</h1>
+        
+        <div class="w-full max-w-lg">
+            <h2 class="text-xl font-semibold mb-4">Agregar Nuevo Cuidador</h2>
+             <CuidadorForm client:only="react"/>
+        </div>
+
+        <div>
+            <h2 class="text-xl font-semibold mb-4">Lista de Cuidador</h2>
+            <CuidadoresList client:only="react"/>
+        </div>
+    </div>
+</Dashboard>
+

@@ -1,0 +1,23 @@
+---
+import ItinerariosList from "@/components/lists/ItinerariosList";
+import ItinerarioForm from "@/components/forms/ItinerarioForm";
+import Dashboard from "@/layouts/Dashboard.astro";
+
+
+---
+
+<Dashboard title="">
+    <div class="space-y-8">
+        <h1 class="text-3xl font-bold uppercase">Gestión de Itinerario</h1>
+        
+        <div class="w-full max-w-lg">
+            <h2 class="text-xl font-semibold mb-4">Agregar nuevo Itinerario</h2>
+            <ItinerarioForm client:only/>
+        </div>
+
+        <div>
+            <h2 class="text-xl font-semibold mb-4">Listado de Itinerarios</h2>
+              <ItinerariosList client:only="react"/>
+        </div>
+    </div>
+</Dashboard>

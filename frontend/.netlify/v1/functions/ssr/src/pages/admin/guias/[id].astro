@@ -1,0 +1,28 @@
+---
+import Dashboard from "@/layouts/Dashboard.astro"
+import type { Guia } from "@/types/guia"
+import EditGuia from "@components/forms/EditGuia"
+export const prerender = false
+
+const host_url_origin = Astro.url.origin
+const data = await fetch(`${host_url_origin}/api/guias.json`)
+const guias = await data.json()
+const {id} = Astro.params
+
+const currentGuia = guias.find((guia:Guia) => guia.id === Number(id))
+if(!currentGuia) return Astro.redirect('/404')
+
+---
+
+<Dashboard title={`Zoo Admin - Especie ${currentGuia.nombre}`}>
+    <div class="space-y-8">
+        <h1 class="text-3xl font-bold uppercase">{`EDITAR GUÍA`}</h1>
+        
+        <div class="w-full max-w-lg">
+            <h2 class="text-xl font-semibold mb-4">{`${currentGuia.nombre}`}</h2>
+        </div>
+        <div class="ml-0 max-w-lg">
+            <EditGuia guia={currentGuia} client:only="react"/>
+        </div>
+    </div>
+</Dashboard>

@@ -4,12 +4,9 @@ import { useEffect, useState } from "react"
 
 export function EditEspecie({especie}){
     const [zonas, setZonas] = useState([])
-    const createNewEspecie = useEspecies(state => state.createNewEspecie)
-    // const [enabled, setEnabled] = useState(false)
     const enabled = useEspecies(state => state.enabled)
     const changeEnabled = useEspecies(state => state.changeEnabled)
     const updateEspecies = useEspecies(state => state.updateEspecies)
-    const viewEspecies = useEspecies(state => state.especies)
     
     useEffect(()=> {
       const fetchZonaAviable = async () => {
@@ -21,34 +18,9 @@ export function EditEspecie({especie}){
       fetchZonaAviable()
     }, [])
 
-    // const handleEditEspecie = async (event, id) => {
-    //     event.preventDefault()
-    //     try{
-    //         const formData = new FormData(event.target)
-    //         const bodyRequest = Object.fromEntries(formData)
 
-    //         const res = await fetch(`/api/especies/${id}.json`, {
-    //             method: 'PUT',
-    //             body: JSON.stringify(bodyRequest),
-    //             headers:{
-    //                 'Content-Type': 'application/json'
-    //             }
-    //         })
-
-    //         if(!res.ok){
-    //             console.log('error desde el cliente')
-    //             return
-    //         }
-
-    //         const especieEdit = await res.json()
-    //         setEnabled(!enabled)
-    //     }catch(error){
-    //         console.error('Error al editar la especie', error)
-    //     }
-    // }
-  
     return(
-      <form className="bg-white p-6 rounded-lg shadow-md" onSubmit={(e) => updateEspecies(e, especie.id)}>
+        <form className="bg-white p-6 rounded-lg shadow-md" onSubmit={(e) => updateEspecies(e, especie.id)}>
         <div className="space-y-4">
             <div>
                 <label htmlFor="nombre_es" className="block text-sm font-medium text-gray-700">Nombre Español:</label>
@@ -140,7 +112,7 @@ export function EditEspecie({especie}){
             }
             </div>
         </div>
-    </form>
+        </form>
     )
   }
   

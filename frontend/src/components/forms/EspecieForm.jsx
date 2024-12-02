@@ -16,7 +16,7 @@ export function EspecieForm({}){
   }, [])
 
   return(
-    <form className="bg-white p-6 rounded-lg shadow-md" onSubmit={(e) => createNewEspecie(e)}>
+    <form className="bg-white p-6 rounded-lg shadow-md" onSubmit={(e) => createNewEspecie(e)} id="especie-form">
       <div className="space-y-4">
         <div>
           <label htmlFor="nombre_es" className="block text-sm font-medium text-gray-700">Nombre Español:</label>

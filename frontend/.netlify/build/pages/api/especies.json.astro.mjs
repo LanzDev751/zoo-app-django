@@ -3,7 +3,6 @@ export { renderers } from '../../renderers.mjs';
 const prerender = false;
 const BASE_URL_API = "http://localhost:8000/api";
 const GET = async ({ request }) => {
-  console.log("output");
   const res = await fetch(`${BASE_URL_API}/especies/`);
   const output = await res.json();
   if (!res.ok) {

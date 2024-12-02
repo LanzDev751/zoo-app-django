@@ -1,0 +1,22 @@
+---
+import ZonaForm from "@/components/forms/ZonaForm";
+import ZonasList from "@/components/lists/ZonasList";
+import Dashboard from "@/layouts/Dashboard.astro";
+
+---
+
+<Dashboard title="Wild Zoo - Zonas">
+    <div class="space-y-8">
+        <h1 class="text-3xl font-bold uppercase">Gestión de Zonas</h1>
+        <div class="w-full max-w-lg">
+            <h2 class="text-xl font-semibold mb-4">Crear nueva Zona</h2>
+            <ZonaForm client:only="react"/>
+        </div>
+
+        <div>
+            <h2 class="text-xl font-semibold mb-4">Lista de Zonas</h2>
+             <!-- <HabitatList client:only="react"/> -->
+              <ZonasList client:only="react"/>
+        </div>
+    </div>
+</Dashboard>

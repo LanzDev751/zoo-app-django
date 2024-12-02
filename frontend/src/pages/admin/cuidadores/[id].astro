@@ -1,0 +1,26 @@
+---
+import EditCuidador from "@/components/forms/EditCuidador";
+import Dashboard from "@/layouts/Dashboard.astro";
+import type { Cuidador } from "@/types/cuidador"
+export const prerender = false
+const host_url_origin = Astro.url.origin
+const data = await fetch(`${host_url_origin}/api/cuidadores.json`)
+const cuidadores = await data.json()
+const {id} = Astro.params
+
+const currentCuidador = cuidadores.find((cuidador:Cuidador) => cuidador.id === Number(id))
+if(!currentCuidador) return Astro.redirect('/404')
+---
+
+<Dashboard title={`Zoo Admin - Especie ${currentCuidador.nombre}`}>
+    <div class="space-y-8">
+        <h1 class="text-3xl font-bold uppercase">{`EDITAR GUÍA`}</h1>
+        
+        <div class="w-full max-w-lg">
+            <h2 class="text-xl font-semibold mb-4">{`${currentCuidador.nombre}`}</h2>
+        </div>
+        <div class="ml-0 max-w-lg">
+            <EditCuidador cuidador={currentCuidador} client:only="react"/>
+        </div>
+    </div>
+</Dashboard>

@@ -1,6 +1,6 @@
 /* empty css                                      */
 import { c as createComponent, r as renderTemplate, d as renderComponent, b as createAstro, m as maybeRenderHead } from '../../../chunks/astro/server_Cyry3a15.mjs';
-import { $ as $$Dashboard } from '../../../chunks/Dashboard_BatskeIf.mjs';
+import { $ as $$Dashboard } from '../../../chunks/Dashboard_CtQ2cjdq.mjs';
 export { renderers } from '../../../renderers.mjs';
 
 const $$Astro = createAstro();

@@ -1,0 +1,27 @@
+---
+import Dashboard from "@/layouts/Dashboard.astro"
+import type { Zona } from "@/types/zona"
+import EditZona from "@components/forms/EditZona"
+export const prerender = false
+
+const host_url_origin = Astro.url.origin
+const data = await fetch(`${host_url_origin}/api/zonas.json`)
+const zonas = await data.json()
+const {id} = Astro.params
+
+const currentZona = zonas.find((zona:Zona) => zona.id === Number(id))
+if(!currentZona) return Astro.redirect('/404')
+---
+
+<Dashboard title={`Zoo Admin - Especie ${currentZona.nombre}`}>
+    <div class="space-y-8">
+        <h1 class="text-3xl font-bold uppercase">{`EDITAR ZONA`}</h1>
+        
+        <div class="w-full max-w-lg">
+            <h2 class="text-xl font-semibold mb-4">{`${currentZona.nombre}`} <span class="text-green-400">({currentZona.capacidad}m)</span></h2>
+        </div>
+        <div class="ml-0 max-w-lg">
+            <EditZona zona={currentZona} client:only="react"/>
+        </div>
+    </div>
+</Dashboard>

@@ -1,0 +1,24 @@
+---
+import GuiaForm from "@/components/forms/GuiaForm";
+import GuiasList from "@/components/lists/GuiasList";
+import Dashboard from "@/layouts/Dashboard.astro";
+
+---
+
+<Dashboard title="">
+    <div class="space-y-8">
+        <h1 class="text-3xl font-bold uppercase">Gestión de Guías</h1>
+        
+        <div class="w-full max-w-lg">
+            <h2 class="text-xl font-semibold mb-4">Agregar nuevo Guía</h2>
+            <!-- <HabitatForm client:only="react" /> -->
+             <GuiaForm client:only="react"/>
+        </div>
+
+        <div>
+            <h2 class="text-xl font-semibold mb-4">Listado de Guías</h2>
+             <!-- <HabitatList client:only="react"/> -->
+              <GuiasList client:only="react"/>
+        </div>
+    </div>
+</Dashboard>

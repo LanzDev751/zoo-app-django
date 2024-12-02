@@ -3,7 +3,6 @@ import type { APIRoute } from "astro";
 const BASE_URL_API = import.meta.env.PRIVATE_ZOOAPI
 
 export const GET: APIRoute = async ({request}) => {
-    console.log('output')
 
     const res = await fetch(`${BASE_URL_API}/especies/`)
     const output = await res.json()
