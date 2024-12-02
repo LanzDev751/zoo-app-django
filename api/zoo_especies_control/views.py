@@ -129,11 +129,11 @@ def zona_details(request, zona_id):
         )
     
     if request.method == 'GET':
-        serializer = EspecieSerializer(zona)
+        serializer = ZonaSerializer(zona)
         return Response(serializer.data)
     
     elif request.method == 'PUT':
-        serializer = EspecieSerializer(zona, data=request.data)
+        serializer = ZonaSerializer(zona, data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
