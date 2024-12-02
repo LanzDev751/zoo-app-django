@@ -1,18 +1,14 @@
 import { useEspecies } from "@/stores/especieStore"
+import { useZonas } from "@/stores/zonaStore"
 import { useEffect, useState } from "react"
 
 export function EspecieForm({}){
-  const [zonas, setZonas] = useState([])
+  const zonas = useZonas(state => state.zonas)
+  const getAllZonas = useZonas(state => state.getAllZonas)
   const createNewEspecie = useEspecies(state => state.createNewEspecie)
   
   useEffect(()=> {
-    const fetchZonaAviable = async () => {
-      const data = await fetch('http://localhost:8000/api/zonas/')
-      const zonas = await data.json()
-      setZonas(zonas)
-    } 
-
-    fetchZonaAviable()
+    getAllZonas()
   }, [])
 
   return(

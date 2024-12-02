@@ -94,7 +94,7 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default = 'postgresql://postgres:password@localhost:5432/zoologico_wild',
+        default = 'postgresql://wildlifeheaven_user:EnmAyUPGsF70SO2i8B1vTnyuEh4rcOB3@dpg-ct6ghk1u0jms73964ubg-a.oregon-postgres.render.com/wildlifeheaven',
         conn_max_age=600,
     )
 }

@@ -1,7 +1,7 @@
 export { renderers } from '../../../renderers.mjs';
 
 const prerender = false;
-const BASE_URL_API = "http://localhost:8000/api";
+const BASE_URL_API = "https://zoo-app-django.onrender.com";
 const DELETE = async ({ request, params }) => {
   const { id } = params;
   try {

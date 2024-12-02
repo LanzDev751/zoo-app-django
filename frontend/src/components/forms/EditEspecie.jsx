@@ -3,19 +3,14 @@ import { useEffect, useState } from "react"
 
 
 export function EditEspecie({especie}){
-    const [zonas, setZonas] = useState([])
+    const zonas = useZonas(state => state.zonas)
+    const getAllZonas = useZonas(state => state.getAllZonas)
     const enabled = useEspecies(state => state.enabled)
     const changeEnabled = useEspecies(state => state.changeEnabled)
     const updateEspecies = useEspecies(state => state.updateEspecies)
     
     useEffect(()=> {
-      const fetchZonaAviable = async () => {
-        const data = await fetch('http://localhost:8000/api/zonas/')
-        const zonas = await data.json()
-        setZonas(zonas)
-      } 
-  
-      fetchZonaAviable()
+        getAllZonas()
     }, [])
 
 

@@ -1,6 +1,7 @@
 export const prerender = false
 import type {APIRoute} from 'astro'
-const BASE_URL_API = import.meta.env.PRIVATE_ZOOAPI
+const isDevelopment = import.meta.env.MODE === 'development'
+const BASE_URL_API = isDevelopment ? import.meta.env.PRIVATE_ZOOAPI : import.meta.env.PRIVATE_ZOOAPI_PRODUCTION
 
 export const GET: APIRoute = async ({request}) => {
     
