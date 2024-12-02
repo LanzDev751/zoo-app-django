@@ -26,11 +26,6 @@ db.sqlite3
 .DS_Store
 Thumbs.db
 
-# Archivos relacionados con Django
-media/
-staticfiles/
-local_settings.py
-
 # Archivos y carpetas de herramientas
 .idea/
 .vscode/
@@ -41,6 +36,3 @@ local_settings.py
 pip-log.txt
 pip-delete-this-directory.txt
 
-# Migraciones generadas automáticamente (opcional, solo si no deseas incluirlas)
-*/migrations/*.py
-!*/migrations/__init__.py
