@@ -3,7 +3,6 @@ import { useEffect, useState } from "react"
 
 export function EspeciesList(){
   // const [especies, setEspecies] = useState([])
-  const [error, setError] = useState(null)
   const especies = useEspecies(state => state.especies)
   const getAllEspeces = useEspecies(state => state.getAllEspecies)
   const deleteEspecie = useEspecies(state => state.deleteEspecie)
@@ -21,7 +20,7 @@ export function EspeciesList(){
           <div>
             <h3 className="text-lg font-medium">{especie.nombre_cientifico}</h3>
             <p className="text-gray-500">{especie.nombre_espanol}</p>
-            <span className="text-sm text-indigo-600">{especie.zona_detalles.nombre}</span>
+            <span className="text-sm text-indigo-600">{especie.zona_detalles === null ?  'Zona No definida' : especie.zona_detalles.nombre}</span>
           </div>
           <div className="space-x-2">
             <a href={`/admin/especies/${especie.id}`}

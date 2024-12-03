@@ -1,10 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '@components/Card';
+
+const especies = await (await fetch('https://zoo-app-django.onrender.com/api/especies/')).json()
+console.log(especies)
 ---
 
 <Layout title="Welcome to Astro.">
-	<main>
-		<Card title={'Med'} body={'buen dia'} client:only="react"/>
+	<main class="py-10 mx-auto container">
+		<h1 class="text-4xl text-white">Bienvenido a la página principal</h1>
+		<p class="text-white text-lg mt-4">Accede al panel de administrador mientras desarrollamos esta página</p>
+		<div class="mt-5 flex">
+			<a href="/admin/home" class="px-6 py-2 bg-indigo-400 text-white hover:bg-indigo-600">Ir a Panel de administrador</a>
+		</div>
 	</main>
 </Layout>

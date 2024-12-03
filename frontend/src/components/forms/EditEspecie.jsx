@@ -1,6 +1,6 @@
 import { useEspecies } from "@/stores/especieStore"
+import { useZonas } from "@/stores/zonaStore"
 import { useEffect, useState } from "react"
-
 
 export function EditEspecie({especie}){
     const zonas = useZonas(state => state.zonas)
@@ -12,7 +12,6 @@ export function EditEspecie({especie}){
     useEffect(()=> {
         getAllZonas()
     }, [])
-
 
     return(
         <form className="bg-white p-6 rounded-lg shadow-md" onSubmit={(e) => updateEspecies(e, especie.id)}>
@@ -72,13 +71,13 @@ export function EditEspecie({especie}){
                 className="mt-1 p-2 bg-slate-200 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 disabled:bg-slate-100"
                 required
             >
-            <option value="" selected={!especie}>Ninguno</option>
+            <option value="" selected={especie.zona_detalles===null}>Ninguno</option>
             {
                 zonas.map(zona => {
                 const {id, nombre} = zona
-                return(
-                    <option key={id}value={id} selected={especie}>{nombre}</option>
-                )
+                    return(
+                        <option key={id} value={id} selected={especie.zona_detalles?.id === id}>{nombre}</option>
+                    )
                 })
             }
             </select>
@@ -109,6 +108,4 @@ export function EditEspecie({especie}){
         </div>
         </form>
     )
-  }
-  
-  
+  }  
